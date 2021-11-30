@@ -2,7 +2,7 @@
 
 test test
 
-git clone https://github.com/eomcs-java.git
+git clone https://github.com/eomcs/eomcs-java.git
 
 git clone https://github.com/eomcs/eomcs-docs.git
 
