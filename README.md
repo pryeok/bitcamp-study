@@ -14,4 +14,4 @@
 
 엄진영 강사님 최고!!
 
-깃허브 practice
+git git hub ~~
