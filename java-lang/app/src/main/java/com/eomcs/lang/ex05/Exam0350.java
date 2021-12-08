@@ -4,15 +4,18 @@ package com.eomcs.lang.ex05;
 //
 public class Exam0350 {
   public static void main(String[] args) {
-    int a = 0b0110_1100;
-    int b = 0b0101_0101;
+    int a = 0b0110_1100;  // 108
+    int b = 0b0101_0101;  // 85
+
+    System.out.println(a);
+    System.out.println(b);
 
     // 정수 값에 대해서는 &&와 ||, !을 사용할 수 없다.
     //System.out.println(a && b); // 컴파일 오류!
     //System.out.println(a || b); // 컴파일 오류!
     //System.out.println(!a); // 컴파일 오류!
 
-    
+
     // 그러나 &, |, ^, ~는 사용할 수 있다.
     // => 각 비트 단위로 연산을 수행한다.
     // => 1은 true, 0은 false라고 간주하고 계산한다.

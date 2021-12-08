@@ -16,6 +16,7 @@ public class Exam0360 {
 
     int r2 = 10 & 20; // OK!
 
+    System.out.println(r2);
     //    float r3 = 10.2f & 20.3f; // 컴파일 오류!
   }
 }
