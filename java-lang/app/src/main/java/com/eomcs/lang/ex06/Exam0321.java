@@ -8,6 +8,9 @@ public class Exam0321 {
     int sum = 0;
 
 
+
+    // & 제어문이 continue를 사용하는 제어문보다 훨씬 빠르다 !!!!!!!!!!
+
     // 1부터 100까지의 짝수의 합은?
     // => continue 사용 전
     count = 0;
