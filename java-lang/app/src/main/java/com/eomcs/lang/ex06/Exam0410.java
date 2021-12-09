@@ -9,7 +9,7 @@ public class Exam0410 {
 
     // for 문의 전형적인 예
     for (int i = 1; i <= 5; i++)
-      System.out.println(i);
+      System.out.println(i); 
     // 실행 순서
     // 1) 변수초기화  => int i = 1
     // 2) 조건 => i <= 5
