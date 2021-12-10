@@ -15,6 +15,7 @@ public class ContactController {
         "홍길동33,hong@test.com,010-1111-2222,비트캠프"        
     };
 
+
     return contacts;
   }
 
