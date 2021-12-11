@@ -56,6 +56,7 @@ fetch(`/contact/get?email=${email}`)
     xCompany.value = contact[3];
   });
 
+
 document.querySelector("#x-update-btn").onclick = function() {
   fetch(`/contact/add?name=${xName.value}&email=${xEmail.value}&tel=${xTel.value}&company=${xCompany.value}`)
     .then(function(response) {
