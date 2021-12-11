@@ -16,32 +16,27 @@
 </form>
 
 <script type="text/javascript">
-var xName =document.querySelector("#x-name");
-var xEmail =document.querySelector("#x-email");
-var xTel =document.querySelector("#x-tel");
-var xCompany =document.querySelector("#x-company");
+var xName = document.querySelector("#x-name")
+var xEmail = document.querySelector("#x-email")
+var xTel = document.querySelector("#x-tel")
+var xCompany = document.querySelector("#x-company")
 
 document.querySelector("#x-add-btn").onclick = function() {
-  // console.log(xName.value);
-  // console.log(xEmail.value);
-  // console.log(xTel.value);
-  // console.log(xCompany.value);
-
   fetch(`/contact/add?name=${xName.value}&email=${xEmail.value}&tel=${xTel.value}&company=${xCompany.value}`)
-    .then(function(response) {
-      return response.text();  // 서버에서 보낸 데이터를 그냥 그대로 텍스트로 리턴해줘! JSON 문자열로 인식해서 파싱하는 일을 하지 말라!
-    })
-    .then(function(result){
-      console.log(result);
-      location.href = "index.html";
-    })
+  .then(function(response) {
+    return response.text();
+  })
+  .then(function(result){
+    console.log(result);
+    location.href = "index.html"
+  })
 };
 
 document.querySelector("#x-cancel-btn").onclick = function() {
   window.location.href = "index.html";
 };
-</script>
 
+</script>
 
 </body>
 </html>
