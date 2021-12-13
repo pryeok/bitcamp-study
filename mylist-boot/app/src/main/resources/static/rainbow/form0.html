@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Rainbow Flea Market</title>
+</head>
+<body>
+
+  <h1>새 품목</h1>
+
+  <form>
+    상품명*: <input id="x-name" type="text"><br>
+    가격*: <input id="x-price" type="text"><br>
+    구매년도*: <input id="x-year" type="text"><br>
+    등급: <input id="x-grade" type="text"><br>
+    별표 (*) 항목은 필수 입력입니다. <br>
+    <button id="x-add-btn" type="button">등록</button>
+    <button id="x-cancel-btn" type="button">취소</button>
+  </form>
+
+<script type="text/javascript">
+
+var xName = document.querySelector("#x-name");
+var xPrice = document.querySelector("#x-price");
+var xYear = document.querySelector("#x-year");
+var xGrade = document.querySelector("#x-grade");
+
+  document.querySelector("#x-add-btn").onclick = function() {
+
+    if (xName.value == "" || xPrice.value == "" || xYear.value == "") {
+      window.alert("필수 입력 항목이 비어 있습니다.");
+      return;
+    }
+
+    fetch(`/rainbow/add?name=${xName.value}&price=${xPrice.value}&year=${xYear.value}&grade=${xGrade.value}`)
+    .then(function(response){
+      return response.text();       // " "이 있어야 json파일로 인식을 한다 !!
+    })
+    .then(function(text){
+      console.log(text);
+
+      location.href = "index0.html";
+    });
+  };
+
+  document.querySelector("#x-cancel-btn").onclick = function() {
+    window.location.href = "index0.html";
+  }
+</script>
+
+
+</body>
+</html>

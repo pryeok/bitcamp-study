@@ -2,20 +2,20 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>연락처</title>
+  <title>Rainbow Flea Market</title>
 </head>
 <body>
 
-<h1>연락처 상세</h1>
+<h1>품목 상세</h1>
 
 <form>
-이메일*: <input id="x-email" type="text" readonly><br>
-이름*: <input id="x-name" type="text"><br>
-전화*: <input id="x-tel" type="text"><br>
-회사: <input id="x-company" type="text"><br>
+상품명*: <input id="x-name" type="text" readonly><br>
+가격 *: <input id="x-price" type="text"><br>
+구매년도*: <input id="x-year" type="text"><br>
+등급: <input id="x-grade" type="text"><br>
 별표(*) 항목은 필수 입력입니다.<br>
-<button id="x-update-btn" type="button">변경</button>
-<button id="x-delete-btn" type="button">삭제</button>
+<button id="x-update-btn" type="button">상품수정</button>
+<button id="x-delete-btn" type="button">판매완료</button>
 <button id="x-cancel-btn" type="button">취소</button>
 </form>
 
@@ -35,62 +35,62 @@
 
   // 2) 쿼리 스트링에서 email 값을 추출한다.
   var params = new URLSearchParams(qs);
-  var email = params.get("email");
+  var name = params.get("name");
 
-  if (email == null) {
-    alert("이메일 값이 없습니다.");
+  if (name == null) {
+    alert("상품이 없습니다.");
     throw "파라미터 오류!";
   }
-  console.log(email);
+  console.log(name);
 
   var xName = document.querySelector("#x-name");
-  var xEmail = document.querySelector("#x-email");
-  var xTel = document.querySelector("#x-tel");
-  var xCompany = document.querySelector("#x-company");
+  var xPrice = document.querySelector("#x-price");
+  var xYear = document.querySelector("#x-year");
+  var xGrade = document.querySelector("#x-grade");
 
   // 3) 서버에서 데이터 가져오기
-  fetch(`/contact/get?email=${email}`)
+  fetch(`/rainbow/get?name=${name}`)
     .then(function(response) {
       return response.text();
     })
-    .then(function(contact) {
-      var values = contact.split(",");
+    .then(function(rainbow) {
+      var values = rainbow.split(",");
 
       // 4) 연락처 상세 정보를 화면에 출력한다.
       xName.value = values[0];
-      xEmail.value = values[1];
-      xTel.value = values[2];
-      xCompany.value = values[3];
+      xPrice.value = values[1];
+      xYear.value = values[2];
+      xGrade.value = values[3];
     });
 
   document.querySelector("#x-update-btn").onclick = function() {
-    if (xName.value == "" || xTel.value == "") {
+    if (xName.value == "" || xPrice.value == "" || xYear.value == "") {
       window.alert("필수 입력 항목이 비어 있습니다.");
       return;
     }
 
-    fetch(`/contact/update?name=${xName.value}&email=${xEmail.value}&tel=${xTel.value}&company=${xCompany.value}`)
+    fetch(`/rainbow/update?name=${xName.value}&price=${xPrice.value}&year=${xYear.value}&grade=${xGrade.value}`)
       .then(function(response) {
         return response.text();
       })
       .then(function(text) {
         console.log(text);
-        location.href = "index.html";
+        location.href = "index0.html";
       });
   };
 
   document.querySelector("#x-cancel-btn").onclick = function() {
-    window.location.href = "index.html";
+    window.location.href = "index0.html";
   };
 
   document.querySelector("#x-delete-btn").onclick = function() {
-    fetch(`/contact/delete?email=${email}`)
+    fetch(`/rainbow/delete?name=${name}`)
       .then(function(response) {
         return response.json();
       })
       .then(function(result) {
         console.log(result);
-        location.href = "index.html";
+        location.href = "index0.html";
       });
   };
 
