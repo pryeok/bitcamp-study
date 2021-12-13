@@ -34,10 +34,11 @@
       return response.json();  // JSON 파일을 자바스크립트 객체로 파싱
     })
     .then(function(contacts){
+      console.log(contacts);
       for (var contact of contacts) {
         var values = contact.split(",");
         var tr = document.createElement("tr");
-        tr.innerHTML = `<td>${values[0]}</td>
+        tr.innerHTML = `<td><a href="view.html?email=${values[1]}">${values[0]}</td>
         <td>${values[1]}</td>
         <td>${values[2]}</td>
         <td>${values[3]}</td>`;
