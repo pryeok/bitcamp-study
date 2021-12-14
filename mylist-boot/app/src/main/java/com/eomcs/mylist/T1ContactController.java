@@ -42,7 +42,7 @@ public class T1ContactController {
   public Object update(String name, String price, String year, String grade) {
     String rainbow = name + "," + price + "," + year + "," + grade;
     for (int i = 0; i < size; i++) {
-      if (rainbows[i].split(",")[1].equals(name)) { 
+      if (rainbows[i].split(",")[0].equals(name)) { 
         rainbows[i] = rainbow;
         return 1;
       }
@@ -54,7 +54,7 @@ public class T1ContactController {
   @RequestMapping("/rainbow/delete")
   public Object delete(String name) {
     for (int i = 0; i < size; i++) {
-      if (rainbows[i].split(",")[1].equals(name)) { // 예) "u1@test.com"
+      if (rainbows[i].split(",")[0].equals(name)) { // 예) "u1@test.com"
         // 현재 위치의 다음 항목에서 배열 끝까지 반복하며 앞으로 값을 당겨온다.
         for (int j = i + 1; j < size; j++) {
           rainbows[j - 1] = rainbows[j];
