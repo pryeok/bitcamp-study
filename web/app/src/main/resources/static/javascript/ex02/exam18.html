@@ -11,11 +11,13 @@
 
 // 대괄호를 사용하여 배열을 만들 수 있다.
 // => 다른 타입의 값을 섞어 넣을 수 있다.
+
 var arr = ["aaa", "bbb", true, 100, new Object(), function() {}];
 
+console.log(arr.length);  // 6
+console.log(arr);  // ['aaa', 'bbb', true, 100, {…}, ƒ]
 
-console.log(arr.length);
-console.log(arr);
+
 console.log("-------------------");
 
 // 마찬가지로 언제든 임의의 위치에 값을 추가할 수 있다.
@@ -26,18 +28,3 @@ console.log(arr);
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
