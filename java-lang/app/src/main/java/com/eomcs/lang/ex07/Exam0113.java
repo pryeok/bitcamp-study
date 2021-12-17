@@ -8,12 +8,14 @@ import java.util.Scanner;
 // 
 public class Exam0113 {
 
+  // 별 앞에 공백 출력 메소드
   static void printSpaces(int len) {
     for (int i = 0; i < len; i++) {
       System.out.print(" ");
     }
   }
 
+  // 별 출력 메소드
   static void printStars(int len) {
     for (int i = 0; i < len; i++) {
       System.out.print("*");
@@ -26,6 +28,8 @@ public class Exam0113 {
     int len = keyScan.nextInt();
     keyScan.close();
 
+
+    // 별 앞 공백 출력, 별 출력, 출력 줄 바꾸기 refactoring
     for (int starLen = 1; starLen <= len; starLen += 2) {
       printSpaces((len - starLen) / 2);
       printStars(starLen);

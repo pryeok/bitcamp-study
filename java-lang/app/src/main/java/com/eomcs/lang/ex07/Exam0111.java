@@ -6,6 +6,12 @@ import java.util.Scanner;
 //
 public class Exam0111 {
 
+  // static 메소드는 같은 static 메소드끼리만 호출할 수 있다
+  // void = 아무것도 넣지 않겠다, 작업만 실행하겠다
+
+
+
+  // 별 앞에 공백 출력 메소드
   static void printSpaces(int len) {
     int spaceCnt = 1;
     while (spaceCnt <= len) {
@@ -23,6 +29,7 @@ public class Exam0111 {
     int starLen = 1;
     while (starLen <= len) {
       printSpaces((len - starLen) / 2);
+
 
       // 별 출력
       int starCnt = 1;

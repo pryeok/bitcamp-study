@@ -7,6 +7,7 @@ import java.util.Scanner;
 //
 public class Exam0112 {
 
+  // 별 앞에 공백 출력 메소드
   static void printSpaces(int len) {
     int spaceCnt = 1;
     while (spaceCnt <= len) {
@@ -15,6 +16,7 @@ public class Exam0112 {
     }
   }
 
+  // 별 출력 메소드
   static void printStars(int len) {
     int starCnt = 1;
     while (starCnt <= len) {
@@ -29,6 +31,7 @@ public class Exam0112 {
     int len = keyScan.nextInt();
     keyScan.close();
 
+    // 별 앞 공백 출력
     int starLen = 1;
     while (starLen <= len) {
       printSpaces((len - starLen) / 2);

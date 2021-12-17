@@ -4,9 +4,8 @@ import java.util.Scanner;
 
 //# 메서드 : 사용 전
 //
-public class Exam0110 {
+public class Exam0110Test {
   public static void main(String[] args) {
-
     Scanner keyScan = new Scanner(System.in);
     System.out.print("밑변의 길이? ");
     int len = keyScan.nextInt();
@@ -21,7 +20,6 @@ public class Exam0110 {
         System.out.print(" ");
         spaceCnt++;
       }
-
 
       // 별 출력
       int starCnt = 1;
