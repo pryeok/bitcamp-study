@@ -1,6 +1,6 @@
 package com.eomcs.lang.ex07;
 
-//# 메서드 : 개념 및 기본 문법 IV
+// # 메서드 : 개념 및 기본 문법 IV
 //
 public class Exam0240 {
 
@@ -13,9 +13,12 @@ public class Exam0240 {
 
   public static void main(String[] args) {
 
+
     // hello() 메서드를 실행하고, 그 리턴 값을 변수에 담는다.
     String r = hello("홍길동", 20);
     System.out.println(r);
+
+
 
     // 앞의 예제와 마찬가지로 리턴 값을 한 번만 사용한다면,
     // 사용할 곳에 메서드 호출 코드를 둬라!
