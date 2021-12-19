@@ -92,6 +92,9 @@ public class ContactController {
     return old;
   }
 
+
+
+
   // 기능 : 배열의 크기를 늘리며 기존 배열의 값을 복사해온다
   String[] grow() {
     String[] arr = new String[newLength()];
