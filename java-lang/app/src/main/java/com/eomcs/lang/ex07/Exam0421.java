@@ -3,6 +3,7 @@ package com.eomcs.lang.ex07;
 // # 배열의 생성은 어디서 하는 것이 좋은가?
 // - 상황에 따라 적합한 것을 선택하면 된다.
 // - 정답은 없다!
+
 public class Exam0421 {
 
   public static void main(String[] args) throws Exception {
@@ -28,6 +29,11 @@ public class Exam0421 {
     }
 
   }
+
+
+
+
+
 
   static void compute(int[] moneys, float[] totals, float interest) {
     for (int i = 0; i < moneys.length; i++) {
