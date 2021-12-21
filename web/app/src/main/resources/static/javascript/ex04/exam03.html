@@ -10,6 +10,8 @@
 "use strict"
 // 일반적인 값 뿐만 아니라, 함수와 객체까지 저장할 수 있다.
 
+// 밸류자리에 객체 값이 들어있는것이 아니라 주소만 들어있으면서 가르켜주는 것일 뿐이다 !!!!!!!!!!!!!!!!!!!!!!!!!!
+
 var obj = new Object();
 
 obj.name = "홍길동";
@@ -22,11 +24,11 @@ obj2.v3 = "문자열";
 obj2.v4 = () => console.log("v4()....");
 
 // 이렇게 프로퍼티의 값으로 다른 객체의 주소를 저장할 수 있다.
-obj.other = obj2;
+obj.other = obj2;    // obj안에 other라는 이름으로 obj2 객체 주소를 저장!!!!!
 
 // 객체의 프로퍼티 값 꺼내기
 console.log(obj.name);
-console.log(obj.other.v1); // 자바의 OGNL(Object Graph Navigation Language)와 비슷하다.
+console.log(obj.other.v1); // 자바의 OGNL(Object Graph Navigation Language) !!!!!!!!!!!!!! 와 비슷하다.
 console.log(obj.other.v2);
 console.log(obj.other.v3);
 
@@ -37,8 +39,3 @@ obj.other.v4();
 </script>
 </body>
 </html>
-
-
-
-
-
