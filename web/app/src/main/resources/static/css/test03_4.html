@@ -14,38 +14,43 @@
         대상자[속성명] {...}
    */
 
+/* 2번째 자식일 경우*/
+/* div가 부모로부터 몇번째 자식이냐 !! */
   div:nth-child(2) {
     border: 1px dashed blue;
   }
- 
+
 /* 자식들 중에서 첫째인 li */
-  li:first-child { 
+  li:first-child {
     background-color: gray;
   }
 
 /* 마우스 커서가 올려져 있는 li */
-
-  li:hover { 
+  li:hover {
     text-decoration: underline;
   }
 
+/* 한번 방문한적이 있으면 색깔을 변경*/
   a:visited {
     color: gray;
   }
 
+/* link 색깔 변경*/
   a:link {
     color: green;
   }
 
+/* active는 마우스를 누르고 있는 상태*/
   a:active {
     background-color: yellow;
   }
 
+/* focus가 되어 있는 위치*/
   a:focus {
     border: 2px inset red;
     font-size: 150%;
   }
-  
+
   .b1:focus {
     background-color: blue;
     color: yellow;
@@ -53,10 +58,10 @@
 
 
 /* 키보드 입력을 받을 수 있는 상태 */
-
-  input:focus { 
+  input:focus {
     background-color: green;
   }
+
 
   button:focus {
     background-color: red;

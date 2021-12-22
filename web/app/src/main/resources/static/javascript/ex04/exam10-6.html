@@ -37,6 +37,11 @@ var obj2 = createScore();
 console.log(obj2); // => createScore()의 return 값이 없으니 undefined
 
 
+for (var score of scores) {
+    console.log(score.name, score.kor, score.eng, score.math,
+            score.sum(), score.aver());
+}
+
 </script>
 </body>
 </html>
