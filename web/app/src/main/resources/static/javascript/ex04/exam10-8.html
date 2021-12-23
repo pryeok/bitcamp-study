@@ -22,16 +22,14 @@ function Score(name, kor, eng, math) {
 	// 그런데 객체를 생성할 때 마다 함수를 만들어 저장한다면 메모리가 낭비된다.
 	// 해결 방안?
 	// => 객체에 대해 공통으로 사용하는 함수는 별도의 보관소에 저장한다.
-
 	/*
 	this.sum = function() {
-	return this.kor + this.eng + this.math;
-};
-this.aver = function() {
-return this.sum() / 3;
-};
-*/
-
+		return this.kor + this.eng + this.math;
+	};
+	this.aver = function() {
+		return this.sum() / 3;
+	};
+	*/
 }
 
 // 객체에 대해 공통으로 사용하는 함수는 생성자 객체에 보관한다.
