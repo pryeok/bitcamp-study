@@ -8,6 +8,7 @@
 <h1>객체 - 프로퍼티의 소속과 사용법</h1>
 <script>
 "use strict"
+// 4) 함수 소속 프로퍼티의 적절한 예
 
 // 생성자 정의
 function Score(name, kor, eng, math) {
@@ -17,7 +18,6 @@ function Score(name, kor, eng, math) {
   this.math = math;
 }
 
-// 4) 함수 소속 프로퍼티의 적절한 예
 // => 다음과 같이 특정 객체의 값을 다루는 함수는 prototype 소속으로 만들라!
 Score.prototype.sum = function() {
   return this.kor + this.eng + this.math;
