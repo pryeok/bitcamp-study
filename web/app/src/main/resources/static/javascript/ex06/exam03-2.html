@@ -6,14 +6,12 @@
 </head>
 <body>
 <h1>이벤트 - 이벤트가 발생된 태그 알아내기 II</h1>
+
 <button id="btn1" data-no="100">버튼1</button><br>
 
 <script>
 "use strict"
 
-// arrow function인 경우
-// this는 window 객체를 가리킨다.
-//
 document.getElementById("btn1").addEventListener("click", (e) => {
   console.log(this); // window 객체이다.
 
@@ -26,6 +24,10 @@ document.getElementById("btn1").addEventListener("click", (e) => {
   // 이벤트가 발생한 객체의 속성 값 알아내기
   console.log(e.target.getAttribute("data-no"));
 });
+
+// arrow function인 경우
+// this는 window 객체를 가리킨다.
+//
 </script>
 </body>
 </html>
