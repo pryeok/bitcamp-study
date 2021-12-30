@@ -2,16 +2,17 @@ package com.eomcs.mylist.domain;
 
 public class Board {
 
-  @Override
-  public String toString() {
-    return "Board [title=" + title + ", content=" + content + ", viewCount=" + viewCount
-        + ", createdDate=" + createdDate + "]";
-  }
 
   String title;
   String content;
   int viewCount;
   java.sql.Date createdDate;
+
+  @Override
+  public String toString() {
+    return "Board [title=" + title + ", content=" + content + ", viewCount=" + viewCount
+        + ", createdDate=" + createdDate + "]";
+  }
 
   public String getTitle() {
     return title;
