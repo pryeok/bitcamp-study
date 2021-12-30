@@ -1,7 +1,9 @@
-package com.eomcs.mylist;
+package com.eomcs.mylist.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.eomcs.mylist.domain.Contact;
+import com.eomcs.util.ArrayList;
 
 @RestController 
 public class ContactController {
@@ -13,14 +15,14 @@ public class ContactController {
 
   @RequestMapping("/contact/list")
   public Object list() {
-    return ArrayList.toArray(contactList); 
+    return contactList.toArray(); 
   }
 
   @RequestMapping("/contact/add")
   public Object add(Contact contact) {
     //    System.out.println(contact);
-    ArrayList.add(contactList,contact);
-    return contactList.size;
+    contactList.add(contact);
+    return contactList.size();
   }
 
 
@@ -30,18 +32,17 @@ public class ContactController {
     if (index == -1) {
       return "";
     }
-
-    return contactList.list[index];
+    return contactList.get(index);
   }
 
   @RequestMapping("/contact/update")
   public Object update(Contact contact) {
-    int index = indexOf(contact.email);
+    int index = indexOf(contact.getEmail());
     if (index == -1) {
       return 0;
     }
 
-    return ArrayList.set(contactList, index, contact) == null ? 0 : 1;
+    return contactList.set(index, contact) == null ? 0 : 1;
   }
 
   @RequestMapping("/contact/delete")
@@ -51,14 +52,14 @@ public class ContactController {
       return 0;
     }
 
-    ArrayList.remove(contactList, index);
+    contactList.remove(index);
     return 1;
   }
 
   int indexOf(String email) {
-    for (int i = 0; i < contactList.size; i++) {
-      Contact contact =  (Contact) contactList.list[i];
-      if (contact.email.equals(email)) { 
+    for (int i = 0; i < contactList.size(); i++) {
+      Contact contact =  (Contact) contactList.get(i);
+      if (contact.getEmail().equals(email)) { 
         return i;
       }
     }
