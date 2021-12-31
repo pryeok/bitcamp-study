@@ -14,17 +14,8 @@ package com.eomcs.oop.ex01;
 class A {}
 
 // => bin/main/com/eomcs/oop/ex01/Exam0510.class
-public class Exam0510 {
 
-  // 중첩 클래스(nested class)
-  // - 다른 클래스 안에 정의된 클래스
-  // - 그 클래스 안에서만 사용된다.
-  // - 종류:
-  //   1) 스태틱 중첩 클래스(static nested class)
-  //   2) 논-스태틱 중첩 클래스(non-static nested class = inner class)
-  //   3) 로컬 클래스(local class)
-  //   4) 익명 클래스(anonymous class)
-  //
+public class Exam0510 {
 
   // 1) 스태틱 중첩 클래스
   // - 이 클래스를 소유하고 있는 클래스 뿐만 아니라 다른 클래스도 사용할 수 있다.
