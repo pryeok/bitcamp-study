@@ -29,6 +29,7 @@ public class Exam0260 {
     }
 
     // 인스턴스를 사용하지 않는 메서드라면 그냥 클래스 메서드로 두어라.
+    // 인스턴스의 변수를 사용하느냐 안하느냐에 따라 static의 유무를 판단 !!
     static int abs(int a) {
       return a >= 0 ? a : a * -1;
     }
