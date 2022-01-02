@@ -2,6 +2,7 @@ package com.eomcs.oop.ex02;
 
 // # 관련된 기능(메서드)을 묶어 분류하기 : 분류 전
 //
+
 public class Exam0210 {
 
   public static void main(String[] args) {
@@ -37,6 +38,7 @@ public class Exam0210 {
     return a / b;
   }
 }
+
 // 클래스 문법의 용도?
 // 1) 사용자 정의 데이터 타입 만들 때
 // - 즉 새로운 구조의 메모리를 설계할 때 사용한다.

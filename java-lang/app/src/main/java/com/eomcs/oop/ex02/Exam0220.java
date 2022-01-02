@@ -27,12 +27,6 @@ public class Exam0220 {
     }
 
     static int abs(int a) {
-      //
-      // if (a >= 0) 
-      //   return a; 
-      // else 
-      //   return a * -1;
-      //
       return a >= 0 ? a : a * -1;
     }
   }
