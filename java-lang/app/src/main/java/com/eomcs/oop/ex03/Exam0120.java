@@ -24,6 +24,7 @@ public class Exam0120 {
     Score s2 = new Score();
     Score s3 = new Score();
 
+
     // 각 인스턴스에 한 명의 성적 데이터를 저장하라!
     s1.name = "홍길동";
     s1.kor = 100;
