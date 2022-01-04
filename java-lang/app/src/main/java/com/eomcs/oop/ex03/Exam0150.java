@@ -16,6 +16,7 @@ public class Exam0150 {
     int age;
   }
 
+
   public static void main(String[] args) {
 
     // 클래스 필드는 인스턴스를 생성할 필요 없이 클래스 이름으로 바로 사용한다.

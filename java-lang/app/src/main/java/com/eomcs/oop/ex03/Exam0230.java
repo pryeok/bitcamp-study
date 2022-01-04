@@ -25,6 +25,7 @@ public class Exam0230 {
 
     // 인스턴스 메서드든 클래스 메서드든 모두 Method Area 영역에 올라간다.
     // 그리고 인스턴스를 가지고 그 메서드를 호출하는 것이다.
+    // 즉 Heap에는 메서드가 없는 것이다 !!!!!!
 
     // c1이 가리키는 인스턴스를 가지고 Method Area에 있는 plus()를 호출한다.
     c1.plus(123);
@@ -32,6 +33,7 @@ public class Exam0230 {
     // c2가 가리키는 인스턴스를 가지고 Method Area에 있는 minus()를 호출한다.
     c2.minus(30);
   }
+
 }
 
 

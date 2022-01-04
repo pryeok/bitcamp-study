@@ -19,6 +19,9 @@ public class Exam0210 {
     }
   }
 
+  // 스태틱 필드는 Method Area에 있고 인스턴스 필드는 Heap에 있다 !!!
+  // 스태틱 메서드와 인스턴스 메서드 모두 Method Area 에 있는 것이다 !!!!!!!!!!!!
+
   public static void main(String[] args) {
     // 클래스 메서드 호출
     // 문법) 클래스명.메서드명();
