@@ -4,6 +4,7 @@ package com.eomcs.oop.ex03;
 public class Exam0690 {
 
   public static class A {
+
     static float pi;
 
     // 스태틱 블록은 클래스 멤버를 사용하기 전에 유효한 값으로 초기화시키는 것.
