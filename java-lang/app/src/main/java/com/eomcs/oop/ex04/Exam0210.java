@@ -4,6 +4,8 @@ package com.eomcs.oop.ex04;
 public class Exam0210 {
   public static void main(String[] args) throws Exception {
     String s1 = new String("Hello");
+    // String 객체는 immutable (불변객체) 이다 !!!!!!!!!!!!!!!!!  
+
 
     // s1 인스턴스(s1 레퍼런스가 가리키는 인스턴스)의 값을 조회하는 메서드 사용
     // 따라서 이 메서드를 호출하려면 반드시 String 인스턴스의 주소를 줘야 한다.
@@ -61,9 +63,9 @@ public class Exam0210 {
     System.out.println(s5);
 
     // => primitive 값을 문자열로 만든다.
-    String s6 = String.valueOf(true);
-    String s7 = String.valueOf(3.14f);
-    String s8 = String.valueOf(100);
+    String s6 = String.valueOf(true);  // "true"
+    String s7 = String.valueOf(3.14f);  // "3.14"
+    String s8 = String.valueOf(100);  // "100"
     System.out.println(s6);
     System.out.println(s7);
     System.out.println(s8);

@@ -10,7 +10,7 @@ public class Exam0120 {
     // 두 String 인스턴스는 분명히 서로 다르다.
     System.out.println(s1 == s2);
 
-    // 두 인스턴스가 갖고 있는 문자열이 같은지를 비교하고 싶다면,
+    // 두 인스턴스가 갖고 있는 문자열이 같은지를 비교하고 싶다면,!!!!!!
     System.out.println(s1.equals(s2));
 
     // equals()?

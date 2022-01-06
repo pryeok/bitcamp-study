@@ -14,7 +14,10 @@ public class Exam0120 {
     System.out.println(d1);
 
     // 년, 월, 일 값으로 날짜 인스턴스를 초기화시킨다.
-    Date d2 = new Date(121, 7, 28);
+    // year - the year minus 1900
+    // month - the month between 0-11
+    // day - the day of the month between 1-31
+    Date d2 = new Date(122, 4, 3);
     System.out.println(d2);
 
     // 1970년 1월 1일 0시 0분 0초부터 측정된 밀리초를 가지고 
