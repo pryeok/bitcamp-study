@@ -7,6 +7,16 @@ import org.springframework.web.bind.annotation.RestController;
 import com.eomcs.mylist.domain.Contact;
 import com.eomcs.util.ArrayList;
 
+//1) 생성자에서 FileReader 객체를 준비한다.
+//2) 파일에서 문자를 읽어 출력한다.
+//3) 파일을 더이상 읽을 수 없으면 반복문을 종료한다.
+//4) 파일에서 읽은 문자를 버퍼에 담았다가 줄바꿈 코드를 만나면 출력한다. 
+//5) 한 줄 출력한 다음에 버퍼를 비운다.
+//6) 한 줄의 CSV 데이터를 읽어 분석한 후 Contact 객체에 담아서 목록에 추가한다.
+//7) CSV 데이터로 Contact 객체를 초기화시키는 일을 Contact 객체의 생성자로 옮긴다.
+//8) Contact 클래스의 valueOf() 스태틱 메서드를 사용하여 CSV 데이터로 객체를 생성한다.
+//9) while 문 정리!
+//
 @RestController 
 public class ContactController {
 
@@ -20,31 +30,16 @@ public class ContactController {
 
     StringBuilder buf = new StringBuilder();
     int c;
-    while (true) {
-      c = in.read();  // 파일에서 한 문자를 읽는다
+    while ((c = in.read()) != -1) {// 파일에서 한 문자를 읽는다. 더이상 읽을 문자가 없으면 반복문을 종료하다.
+      if (c == '\n') { // 만약 읽은 문자가 줄바꿈 명령이라면, 지금까지 읽은 CSV 데이터를 분석하여 Contact 객체에 담는다.
+        contactList.add(Contact.valueOf(buf.toString())); // 파일에서 읽은 CSV 데이터로 객체를 초기화시킨후 목록에 등록한다.
+        buf.setLength(0); // 다음 데이터를 읽기 위해 버퍼를 초기화시킨다.
 
-      if (c == -1) // 더이상 읽을 문자가 없다면 반복문을 종료한다
-        break;
-
-      if (c == '\n') { // 만약 읽은 문자가 줄바꿈 명령이라면, 지금까지 읽은 CSV 데이터를 분석하여 Contact 객체에 담는다
-
-        String csvStr = buf.toString(); // 예) "홍길동,hong@test.com,010-1111-2222,비트캠프"
-        String[] values = csvStr.split("."); // 예) ["홍길동","hong@test.com","010-1111-2222","비트캠프"]
-
-        Contact contact = new Contact(); // 파일에서 읽은 데이터를 담을 객체를 준비한다
-        contact.setName(values[0]); // 배열에 들어 있는 각 항목을 객체의 필드에 저장한다
-        contact.setEmail(values[1]);
-        contact.setTel(values[2]);
-        contact.setCompany(values[3]);
-
-        contactList.add(contact); // 데이터를 담은 객체를 목록에 추가한다
-
-        buf.setLength(0); // 다음 데이터를 읽기 위해 버퍼를 초기화시킨다
-
-      } else {
+      } else { // 문자를 읽을 때 마다 버퍼이 임시 보관한다.
         buf.append((char) c);
       }
     }
+
     in.close();
   }
 
@@ -102,7 +97,7 @@ public class ContactController {
     }
 
     out.close();
-    return 0;
+    return arr.length;
   }
 
   int indexOf(String email) {
@@ -115,6 +110,7 @@ public class ContactController {
     return -1;
   }
 }
+
 
 
 
