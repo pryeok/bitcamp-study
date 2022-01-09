@@ -10,6 +10,7 @@ public class Contact {
     System.out.println("Contact() 호출됨!");
   }
 
+  // => 인스턴스 메서드
   public Contact(String csvStr) {
     // 예) csvStr => "홍길동,hong@test.com,010-1111-2222,비트캠프"
 
@@ -19,6 +20,7 @@ public class Contact {
     this.setTel(values[2]);
     this.setCompany(values[3]);
   }
+
 
   // 적용기술
   // => 스태틱 메서드 : 특정 인스턴스에 종속되지 않고 사용하는 메서드.
