@@ -4,6 +4,7 @@ package com.eomcs.oop.ex06.a;
 public class Exam0110 {
 
   public static void main(String[] args) {
+
     Vehicle vehicle = new Vehicle();
     Bike bike = new Bike();
     Car car = new Car();

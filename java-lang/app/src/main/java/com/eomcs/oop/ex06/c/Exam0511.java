@@ -1,4 +1,4 @@
-// 오버라이딩(overriding) - 레퍼런스가 가리키는 메서드
+// 오버라이딩(overriding) - 레퍼런스가 가리키는 메서드 (이게 필드보다 더 중요하다 !!! )
 package com.eomcs.oop.ex06.c;
 
 public class Exam0511 {

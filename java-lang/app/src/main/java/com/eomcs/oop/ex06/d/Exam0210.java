@@ -16,6 +16,7 @@ class Sedan extends Car {
 
 public class Exam0210 {
   public static void main(String[] args) {
+
     // 1) 다형적 변수의 사용법에 따라,
     //    - super 클래스 레퍼런스로 하위 클래스의 인스턴스를 가리킨다.
     Car car = new Sedan();

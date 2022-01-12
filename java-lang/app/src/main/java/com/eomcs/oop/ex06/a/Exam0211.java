@@ -4,6 +4,7 @@ package com.eomcs.oop.ex06.a;
 public class Exam0211 {
 
   public static void main(String[] args) {
+
     Vehicle v1 = new Sedan();
 
     // model과 capacity 변수는 원래 Vehicle 설계도에 있는 변수이기 때문에

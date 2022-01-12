@@ -39,6 +39,7 @@ public class Exam0120 {
     // 
     // * 메서드 시그너처(method signature) = 함수 프로토타입(function prototype)
     //       메서드명, 파라미터 타입/개수/순서
+    @Override
     void print() {
       System.out.println("A3.print():");
       System.out.printf("  => this.name(%s)\n", this.name);
