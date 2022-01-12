@@ -1,4 +1,4 @@
-// 오버라이딩(overriding) - 문법이 존재하지 않는다면
+// 오버라이딩(overriding) - 문법이 존재하지 않는다면 (사용전)
 package com.eomcs.oop.ex06.c;
 
 public class Exam0110 {

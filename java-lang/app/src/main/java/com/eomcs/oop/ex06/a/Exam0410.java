@@ -18,7 +18,7 @@ public class Exam0410 {
 
     Truck truck = new Truck();
     truck.model = "타이탄II";
-    truck.cc = 10000;
+    truck.cc = 10000; 
 
     printSedan(sedan);
 
