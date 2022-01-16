@@ -15,7 +15,7 @@ public class CarTest2 {
     System.out.println("---------------");
 
     Suv suv = new Suv();
-    suv.active4wd(false);
+    suv.active4wd(true);
     testCar(suv);
 
   }
