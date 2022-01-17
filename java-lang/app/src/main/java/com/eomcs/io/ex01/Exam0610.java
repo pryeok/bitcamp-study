@@ -9,7 +9,6 @@ public class Exam0610 {
 
   public static void main(String[] args) throws Exception {
 
-    // implements : 실행하다, 수행하다
     class JavaFilter implements FilenameFilter {
       @Override
       public boolean accept(File dir/* 부모 경로 */, String name /* 파일,디렉토리 이름 */) {

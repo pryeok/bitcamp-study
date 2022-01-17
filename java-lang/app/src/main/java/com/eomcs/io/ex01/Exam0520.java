@@ -19,7 +19,7 @@ public class Exam0520 {
       System.out.printf("%s   %s %12d %s\n",
           file.isDirectory() ? "d" : "-",
               new Date(file.lastModified()),
-              file.length(),  // 파일 길이
+              file.length(),
               file.getName());
     }
 

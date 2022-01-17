@@ -15,6 +15,8 @@ public class Exam0525 {
     byte[] buf = new byte[1000];
     int count = in.read(buf);
 
+    System.out.println(count);
+
     in.close();
 
     // JVM 환경 변수 'file.encoding'에 설정된 문자표에 상관없이 

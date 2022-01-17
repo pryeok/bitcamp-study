@@ -10,7 +10,6 @@ public class Exam0130 {
     // => 파일이나 디렉토리 정보를 관리
     // => 파일이나 디렉토리를 생성,삭제,변경
 
-
     // 존재하지 않는 폴더 조회
     //
     File currentDir = new File("./haha");

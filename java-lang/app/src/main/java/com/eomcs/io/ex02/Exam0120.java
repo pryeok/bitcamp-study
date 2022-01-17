@@ -13,7 +13,7 @@ public class Exam0120 {
     FileInputStream in = new FileInputStream("temp/test1.data");
 
     // 2) 1바이트를 읽는다.
-    // => read() 메서드의 리턴 타입이 int 라 하더라도 1바이트를 읽어 리턴한다.
+    // => read() 메서드의 리턴 타입이 int 라 하더라도 1바이트를 읽어 리턴한다.!!!!
     // => 이유?
     //    0 ~ 255까지의 값을 읽기 때문이다.
     //    byte는 -128 ~ 127까지의 값만 저장한다.
