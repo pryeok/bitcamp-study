@@ -8,6 +8,8 @@ public class Exam0210 {
   public static void main(String[] args) throws Exception {
     FileOutputStream out = new FileOutputStream("temp/test3.data");
 
+    // 인트값을 모두 출력하는데에는 이 방법밖에 없다...ㅜ
+
     int money = 1_3456_7890; // = 0x080557d2
 
     // int 메모리의 모든 바이트를 출력하려면,

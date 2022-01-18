@@ -9,6 +9,7 @@ public class Exam0420 {
   public static void main(String[] args) throws Exception {
     FileReader in = new FileReader("temp/test2.txt");
 
+    // CahrBuffer 쓸 때는 조심 !!!
     // FileReader 객체가 읽을 데이터를 저장할 메모리를 준비한다.
     CharBuffer charBuf = CharBuffer.allocate(100);
 
@@ -21,8 +22,8 @@ public class Exam0420 {
 
     // 버퍼의 데이터를 꺼내기 전에 읽은 위치를 0으로 초기화시킨다.
     // - read() 메서드가 파일에서 데이터를 읽어서 버퍼에 채울 때 마다 커서의 위치를 이동시킨다.
-    // - 버퍼의 데이터를 읽으려면 커서의 위치를 처음으로 되돌려야 한다.
-    // - flip() 메서드를 호출하여 버퍼의 커서를 처음으로 위치시킨다.
+    // - 버퍼의 데이터를 읽으려면 커서의 위치를 처음으로 되돌려야 한다.!!!!!!!!!!!
+    // - flip() 메서드를 호출하여 버퍼의 커서를 처음으로 위치시킨다. 그런 후에 벌퍼의 텍스트를 읽어야 한다
     charBuf.flip();
 
     System.out.printf("[%s]\n", charBuf.toString());
