@@ -11,7 +11,7 @@ public class Exam0210 {
     long start = System.currentTimeMillis();
 
     for (int i = 0; i < 1000000; i++) {
-      out.write(0x55);
+      out.write(0x55);  // u
     }
 
     long end = System.currentTimeMillis();

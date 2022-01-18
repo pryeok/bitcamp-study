@@ -12,11 +12,12 @@ public class Exam0111 {
     // 1) 출력 스트림 객체를 생성할 때  문자 집합을 지정하면 
     //    UCS2 문자열을 해당 문자집합으로 인코딩 한다.
     Charset charset = Charset.forName("EUC-KR");
+
     FileWriter out = new FileWriter("temp/test2.txt", charset);
 
     // 현재 JVM 환경 변수 'file.encoding' 값 알아내기
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
-    // file.encoding은 UTF-8이지만 출력은 EUC-KR로 출력된다
+    // file.encoding은 UTF-8이지만 출력은 EUC-KR로 출력된다 !!!
 
     // UCS2에서 한글 '가'는 ac00이다.
     out.write(0x7a6bac00); 
