@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 public class BufferedOutputStream {
+
   OutputStream out;
 
   byte[] buf = new byte[8196];

@@ -27,6 +27,7 @@ public class Exam0210 {
 
     out2.close();
 
+
     System.out.println("출력 완료!");
   }
 

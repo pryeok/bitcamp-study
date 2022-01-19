@@ -2,8 +2,7 @@ package com.eomcs.mylist.domain;
 
 import java.sql.Date;
 
-public class Board {
-
+public class Board implements java.io.Serializable {
   String title;
   String content;
   int viewCount;
@@ -14,10 +13,10 @@ public class Board {
   }
 
   public Board(String csvStr) {
-    // 예) csvStr => "제목, 내용, 조회수, 등록일"
+    // 예) csvStr => "제목,내용,조회수,등록일"
 
-    String[] values = csvStr.split(","); // 예) ["제목","내용","조회수","등록일"]
-    this.setTitle(values[0]); // 배열에 들어 있는 각 항목을 객체의 필드에 저장한다.
+    String[] values = csvStr.split(","); 
+    this.setTitle(values[0]); 
     this.setContent(values[1]);
     this.setViewCount(Integer.valueOf(values[2]));
     this.setCreatedDate(Date.valueOf(values[3]));
@@ -32,12 +31,12 @@ public class Board {
   //    보통 스태틱 메서드로 정의한다.
   //
   public static Board valueOf(String csvStr) {
-    // 예) csvStr => "제목, 내용, 조회수, 등록일"
+    // 예) csvStr => "제목,내용,조회수,등록일"
 
-    String[] values = csvStr.split(","); // 예) ["제목","내용","조회수","등록일"]
+    String[] values = csvStr.split(",");
 
     Board board = new Board();
-    board.setTitle(values[0]); // 배열에 들어 있는 각 항목을 객체의 필드에 저장한다.
+    board.setTitle(values[0]); 
     board.setContent(values[1]);
     board.setViewCount(Integer.valueOf(values[2]));
     board.setCreatedDate(Date.valueOf(values[3]));
@@ -45,6 +44,7 @@ public class Board {
     return board;
   }
 
+  // 적용 기술
   // => 인스턴스 메서드: 특정 인스턴스를 사용한다면 인스턴스 메서드로 만들라! 
   // => GRASP의 Information Expert 패턴
   //    데이터를 가공하는 기능은 그 데이터를 갖고 있는 클래스에 둬야 한다.
@@ -54,13 +54,6 @@ public class Board {
         this.getContent(), 
         this.getViewCount(), 
         this.getCreatedDate());
-  }
-
-
-  @Override
-  public String toString() {
-    return "Board [title=" + title + ", content=" + content + ", viewCount=" + viewCount
-        + ", createdDate=" + createdDate + "]";
   }
 
   public String getTitle() {
@@ -88,5 +81,9 @@ public class Board {
     this.createdDate = createdDate;
   }
 
-
+  @Override
+  public String toString() {
+    return "Board [title=" + title + ", content=" + content + ", viewCount=" + viewCount
+        + ", createdDate=" + createdDate + "]";
+  }
 }

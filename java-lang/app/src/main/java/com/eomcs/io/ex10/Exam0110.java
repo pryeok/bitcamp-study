@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 public class Exam0110 {
 
   public static void main(String[] args) throws Exception {
+
     FileOutputStream fileOut = new FileOutputStream("temp/members.data");
     DataOutputStream out = new DataOutputStream(fileOut);
 

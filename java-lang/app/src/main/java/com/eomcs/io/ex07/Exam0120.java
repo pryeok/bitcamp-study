@@ -4,6 +4,7 @@ package com.eomcs.io.ex07;
 public class Exam0120 {
 
   public static void main(String[] args) throws Exception {
+
     DataBufferedFileOutputStream out = new DataBufferedFileOutputStream("temp/members.data");
 
     Member member = new Member();

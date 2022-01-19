@@ -20,10 +20,10 @@
 //
 
 function createGreeting(name) {
-  var message = name + "님 반갑습니다!";
 
   // 클로저 만들기
   var f = function() {
+    var message = name + "님 반갑습니다!";
     console.log(message); // 클로저에서 바깥 함수의 변수를 사용하기
     // 클로저가 바깥 함수의 로컬 변수를 사용하면,
     // 내부적으로 클로저 메모리에 같은 이름으로 그 값을 복제해 둔다.
