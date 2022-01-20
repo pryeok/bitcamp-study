@@ -2,11 +2,10 @@ package com.eomcs.mylist.controller;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.sql.Date;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.eomcs.mylist.domain.Book;
@@ -21,30 +20,17 @@ public class BookController {
     bookList = new ArrayList();
     System.out.println("BookController() 호출됨!");
 
-    DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream("books.data")));
+    try {
 
-    while (true) { 
-      try {
-        Book book = new Book();
-        book.setTitle(in.readUTF());
-        book.setAuthor(in.readUTF());
-        book.setPress(in.readUTF());
-        book.setPage(in.readInt());
-        book.setPrice(in.readInt());
-        String date = in.readUTF();
-        if (date.length() > 0) {
-          book.setReadDate(Date.valueOf(date));
-        }
-        book.setFeed(in.readUTF());
+      ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream("books.ser2")));
 
-        bookList.add(book); // 파일에서 읽은 한 줄의 CSV 데이터로 객체를 만든 후 목록에 등록한다.
-      } catch (Exception e) {   //try 돌려보다가 예외가 catch(발견)되었을 때 break !!
-        break;
-      }
+      // 목록이 통째로 serialize 되었을 경우, 한 번에 목록을 읽으면 된다.
+      bookList = (ArrayList) in.readObject(); // 단 기존의 생성한 ArrayList 객체는 버린다.
+      in.close();
 
+    } catch (Exception e) {   //try 돌려보다가 예외가 catch(발견)되었을 때 break !!
+      System.out.println("도서록 데이터를 로딩하는 중 오류 발생!");
     }
-
-    in.close();
   }
 
   @RequestMapping("/book/list")
@@ -86,28 +72,13 @@ public class BookController {
   @RequestMapping("/book/save")
   public Object save() throws Exception {
 
-    DataOutputStream out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("books.data")));
+    ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("books.ser2")));
 
-
-    Object[] arr = bookList.toArray();
-    for (Object obj : arr) {
-      Book book = (Book) obj;
-      out.writeUTF(book.getTitle());
-      out.writeUTF(book.getAuthor());
-      out.writeUTF(book.getPress());
-      out.writeInt(book.getPage());
-      out.writeInt(book.getPrice());
-      if (book.getReadDate() == null) {
-        out.writeUTF("");
-      } else {
-        out.writeUTF(book.getReadDate().toString());
-      }
-      out.writeUTF(book.getFeed());
-
-    }
+    // 목록 자체를 serialize 할 수도 있다
+    out.writeObject(bookList);
 
     out.close();
-    return arr.length;
+    return bookList.size();
   }
 }
 

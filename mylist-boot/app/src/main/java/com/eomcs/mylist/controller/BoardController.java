@@ -20,26 +20,26 @@ public class BoardController {
   public BoardController() throws Exception {
     System.out.println("BoardController() 호출됨!");
 
-    ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream("boards.ser2")));
-
-    // 1) 객체가 각각 따로 serialize 되었을 경우, 다음과 같이 객체 단위로 읽으면 되고,
-    //    while (true) {
-    //      try {
-    //        Board board = (Board) in.readObject();
-    //        boardList.add(board);
-    //
-    //      } catch (Exception e) {
-    //        break;
-    //      }
-    //    }
-
     try {
+      ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream("boards.ser2")));
+
+      // 1) 객체가 각각 따로 serialize 되었을 경우, 다음과 같이 객체 단위로 읽으면 되고,
+      //    while (true) {
+      //      try {
+      //        Board board = (Board) in.readObject();
+      //        boardList.add(board);
+      //
+      //      } catch (Exception e) {
+      //        break;
+      //      }
+      //    }
+
       // 2) 목록이 통째로 serialize 되었을 경우, 한 번에 목록을 읽으면 된다.
       boardList = (ArrayList) in.readObject(); // 단 기존의 생성한 ArrayList 객체는 버린다.
 
       in.close();
     } catch (Exception e) {
-      System.out.println("독서록 데이터를 로딩하는 중 오류 발생!");
+      System.out.println("게시판 데이터를 로딩하는 중 오류 발생!");
     }
   }
 

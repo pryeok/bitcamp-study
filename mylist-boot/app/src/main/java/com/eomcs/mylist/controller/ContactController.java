@@ -86,7 +86,7 @@ public class ContactController {
     //      out.writeObject(obj);
     //    }
 
-    // 2) 다음과 같이 목록 자체를 serialize 할 수 도 있다.
+    // 2) 다음과 같이 목록 자체를 serialize 할 수도 있다.
     out.writeObject(contactList);
 
     out.close();

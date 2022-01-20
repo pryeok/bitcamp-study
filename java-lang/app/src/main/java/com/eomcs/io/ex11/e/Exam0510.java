@@ -23,6 +23,7 @@ public class Exam0510 {
     s.aver = 100.0f;
 
     // serialize 할 때 transient가 붙은 필드의 값은 제외된다.
+    // 그냥 0값으로 출력 !!! (사실상 출력할때 저장을 하지 않은 것이다)
     out.writeObject(s);
 
     out.close();

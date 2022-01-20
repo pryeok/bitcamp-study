@@ -2,10 +2,10 @@ package com.eomcs.mylist.controller;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.eomcs.mylist.domain.Todo;
@@ -20,21 +20,16 @@ public class TodoController {
     todoList = new ArrayList();
     System.out.println("TodoController() 호출됨!");
 
-    DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream("todos.data")));
+    try {
+      ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream("todos.ser2")));
 
-    while (true) { 
-      try {
-        Todo todo = new Todo();
-        todo.setTitle(in.readUTF());
-        todo.setDone(in.readBoolean());
+      // 목록이 통째로 serialize 되었을 경우, 한 번에 목록을 읽으면 된다.
+      todoList = (ArrayList) in.readObject();  // 단 기존의 생성한 ArrayList 객체는 버린다.
+      in.close();
 
-        todoList.add(todo); // 파일에서 읽은 한 줄의 CSV 데이터로 객체를 만든 후 목록에 등록한다.
-      } catch (Exception e) {
-        break;
-      }
+    } catch (Exception e) {
+      System.out.println("해야할 일 데이터를 로딩하는 중 오류 발생!");
     }
-
-    in.close();
   }
 
   @RequestMapping("/todo/list")
@@ -84,21 +79,15 @@ public class TodoController {
   public Object save() throws Exception {
 
     // 데이터를 바이너리 형식으로 저장하기 위해 !!!
-    DataOutputStream out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("todos.data")));
+    ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("todos.ser2")));
 
-    Object[] arr = todoList.toArray();
-    for (Object obj : arr) {
-      Todo todo = (Todo) obj;
-      out.writeUTF(todo.getTitle());
-      out.writeBoolean(todo.isDone());
-
-    }
+    // 다음과 같이 목록 자체를 serialize 할 수도 있다
+    out.writeObject(todoList);
 
     out.close();
-    return arr.length;
+    return todoList.size();
   }
 }
-
 
 
 

@@ -17,7 +17,7 @@ public class Exam0142 {
     System.out.println(obj1.equals(obj2)); // true
 
     System.out.println(Integer.toHexString(obj1.hashCode()));
-    System.out.println(Integer.toHexString(obj2.hashCode()));
+    System.out.println(Integer.toHexString(obj2.hashCode()));  // 16진수로 변환 해쉬코드로 바뀐다
 
     System.out.println(obj1);
     System.out.println(obj2);

@@ -34,10 +34,12 @@ public class Exam0120 {
     // - hashCode()를 재정의하지 않고 원래 메서드를 그대로 사용하면
     //   무조건 인스턴스마다 새 해시값이 부여된다.
 
+
     My obj2 = new My();
     My obj3 = new My();
 
     System.out.println(obj2 == obj3);
+
 
     System.out.println(obj2.toString());
     System.out.println(obj3.toString());
