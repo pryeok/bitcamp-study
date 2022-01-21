@@ -10,7 +10,9 @@ public class Exam0210 {
   public static void main(String[] args) throws Exception {
 
     FileInputStream fileIn = new FileInputStream("temp/members.data");
+
     BufferedInputStream bufIn = new BufferedInputStream(fileIn);
+
     DataInputStream in = new DataInputStream(bufIn);
 
     Member member = new Member();
