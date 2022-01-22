@@ -17,10 +17,12 @@ public class Exam0212 {
     String s2 = obj2.toString(); // Object의 toString()이 아니다. Double에서 오버라이딩한 toString()이다
     String s3 = obj3.toString(); // Object의 toString()이 아니다. Boolean에서 오버라이딩한 toString()이다
 
+
     // 다른 진수로 변환하여 문자열로 꺼내기
     System.out.println(Integer.toHexString(i));
     System.out.println(Integer.toOctalString(i));
     System.out.println(Integer.toBinaryString(i));
+
   }
 }
 
