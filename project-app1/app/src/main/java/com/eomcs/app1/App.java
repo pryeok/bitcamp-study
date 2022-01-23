@@ -1,31 +1,39 @@
-
 package com.eomcs.app1;
 
 public class App {
 
+
   public static void main(String[] args) {
 
-    if (args.length == 0) {
-      System.out.println("사용법:");
-      System.out.println("App [명령] [값1] [값2]");
-      System.out.println("명령:");
-      System.out.println("add   [값1] [값2]     더하기 계산을 수행한다. 예) App add 100 200");
-      System.out.println("minus [값1] [값2]     빼기 계산을 수행한다. 예) App minus 100 200");
-      return;
+    Console console = new Console();
+
+    CommandHandler commandHandler = new CommandHandler();
+
+    while (true) {
+      Command command = console.prompt();
+
+      if (command.getName().equals("quit") || command.getName().equals("exit")) {
+        break;
+
+      } else if (command.getName().equals("")) {
+        continue;
+
+      } else if (command.getName().equals("help")) {
+        commandHandler.doHelp();
+
+      } else if (command.getName().equals("add")) {
+        commandHandler.doAdd(command);
+
+      } else if (command.getName().equals("minus")) {
+        commandHandler.doMinus(command);
+
+      } else {
+        System.out.println("지원하지 않는 연산자입니다.");
+      }
     }
 
-
-    if (args[0].equals("add")) {
-      int v1 = Integer.valueOf(args[1]);
-      int v2 = Integer.valueOf(args[2]);
-
-      System.out.printf("%d+%d = %d\n", v1, v2, v1+v2);
-    } else if (args[0].equals("minus")) {
-      int v1 = Integer.valueOf(args[1]);
-      int v2 = Integer.valueOf(args[2]);
-
-      System.out.printf("%d-%d = %d\n", v1, v2, v1-v2);      
-    }
-
+    console.close();
   }
+
+
 }
