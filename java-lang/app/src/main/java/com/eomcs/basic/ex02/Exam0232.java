@@ -19,9 +19,12 @@ public class Exam0232 {
     Integer obj4 = 200;
     System.out.println(obj3 == obj4); // false
 
-    // 결론 !
-    // String이나 Wrapper 인스턴스의 값을 비교할 때는 무조건 equals()를 사용하라! 
+    System.out.println(obj3.equals(obj4)); // true
+
   }
 }
 
 
+
+// 결론 !
+// String이나 Wrapper 인스턴스의 값을 비교할 때는 무조건 equals()를 사용하라! 
