@@ -1,46 +1,37 @@
 package com.eomcs.mylist.dao;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import org.springframework.stereotype.Repository;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import com.eomcs.mylist.domain.Board;
 import com.eomcs.util.ArrayList;
 
-@Repository
-public class CsvBoardDao implements BoardDao { 
-  ArrayList boardList; // 변수 선언 = 변수를 만들라는 명령!
+public class SerialBoardDao implements BoardDao {
 
+  String filename = "boards.ser";
+  ArrayList boardList = new ArrayList(); // 변수 선언 = 변수를 만들라는 명령!
 
-  public CsvBoardDao() {
-    // super();
-    boardList = new ArrayList();
-
+  public SerialBoardDao() {
     try {
-      BufferedReader in = new BufferedReader(new FileReader("boards.csv"));
+      ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(filename)));
 
-      String csvStr;
-      while ((csvStr = in.readLine()) != null) {
-        boardList.add(Board.valueOf(csvStr)); 
-      }
+      boardList = (ArrayList) in.readObject();     
 
       in.close();
+
     } catch (Exception e) {
       System.out.println("게시글 데이터 로딩 중 오류 발생!");
     }
   }
 
   private void save() throws Exception {
-    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("boards.csv")));
+    ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename)));
 
-    for (int i = 0; i < boardList.size(); i++) {
-      Board board = (Board) boardList.get(i);
-      out.println(board.toCsvString());
-    }
+    out.writeObject(boardList);
     out.flush();
-
     out.close();
   }
 
@@ -94,7 +85,6 @@ public class CsvBoardDao implements BoardDao {
     board.setViewCount(board.getViewCount() + 1);
     save();
   }
-
 }
 
 
