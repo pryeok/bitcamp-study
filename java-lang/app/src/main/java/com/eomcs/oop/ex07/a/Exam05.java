@@ -69,6 +69,7 @@ class ReportLetter extends Letter {
 
 public class Exam05 {
   public static void main(String[] args) {
+
     Letter letter = new LoveLetter();
     letter.setContent("눈이 녹으면 무엇이 될까요?\n"
         + "봄이 온다 합니다.\n"

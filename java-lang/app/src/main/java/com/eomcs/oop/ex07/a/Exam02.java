@@ -17,11 +17,17 @@ abstract class A2 {
   //   왜?
   //   추상 메서드를 갖는 클래스는 오직 추상 클래스만이 가능하기 때문이다.
   //
+
+
+
   public abstract void m1();
 
   // 추상 메서드는 구현할 수 없다.
   //  public abstract void m2() {} // 컴파일 오류!
 }
+
+
+
 
 // 일반 클래스(concrete class)
 class A2Sub extends A2 {
@@ -30,6 +36,9 @@ class A2Sub extends A2 {
     // 서브 클래스에서 추상 메서드를 구현해야 한다.
   }
 }
+
+
+
 
 public abstract class Exam02 extends A2 {
   // 서브 클래스에서 추상 메서드를 구현하지 않는다면,

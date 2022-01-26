@@ -1,7 +1,7 @@
 package com.eomcs.oop.ex07.d;
 
 // 기존의 정렬 클래스처럼 동일한 방법으로 사용하려면
-// Sorter를 상속 받아 같은 타입으로 묶여야 한다.
+// Sorter를 상속 받아 같은 타입으로 묶어야 한다.
 // 그래서 Sorter 를 상속 받았다.
 //
 public class MergeSort extends Sorter {
@@ -20,6 +20,7 @@ public class MergeSort extends Sorter {
   // Merges two subarrays of arr[].
   // First subarray is arr[l..m]
   // Second subarray is arr[m+1..r]
+
   void merge(int arr[], int l, int m, int r)
   {
     // Find sizes of two subarrays to be merged
@@ -78,7 +79,8 @@ public class MergeSort extends Sorter {
 
   // Main function that sorts arr[l..r] using
   // merge()
-  void sort(int arr[], int l, int r)
+
+  public void sort(int arr[], int l, int r)
   {
     if (l < r)
     {
