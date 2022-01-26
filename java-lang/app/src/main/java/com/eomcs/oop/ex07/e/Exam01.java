@@ -22,7 +22,6 @@ public class Exam01 {
   }
 
   static void display(Sorter sorter, int[] values) {
-
     // 어? 강사님! Sorter 클래스의 sort() 메서드는 추상 메서드인데
     // 어떻게 호출할 수 있나요? 다음 코드는 오류가 아닌가요?
     // => 레퍼런스를 통해 메서드를 호출할 때

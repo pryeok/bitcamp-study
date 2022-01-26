@@ -10,6 +10,7 @@ package com.eomcs.oop.ex07.a;
 // - 상속에서 generalization을 통해 수퍼 클래스를 정의하는 경우에
 //   그 수퍼 클래스를 주로 추상 클래스로 만든다. !!!!!!!!!!
 //
+
 abstract class A {
 
 }
