@@ -29,6 +29,7 @@ public class Worker extends Thread{
         int b = Integer.parseInt(values[2]);
         int result = 0;
 
+
         switch(op) {
           case "+": 
             result = a + b; 
