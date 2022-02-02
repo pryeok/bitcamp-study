@@ -54,7 +54,6 @@ public class ClientApp {
       socket.close();
       System.out.println("서버 연결 종료!");
     }
-
     keyScan.close();
   }
 
