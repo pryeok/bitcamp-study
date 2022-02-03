@@ -53,7 +53,7 @@ public class ClientApp {
       // 서버 애플리케이션과 연결된 것을 끊는다.
       socket.close();
       System.out.println("서버 연결 종료!");
-    }
+    } 
     keyScan.close();
   }
 
