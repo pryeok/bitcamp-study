@@ -29,6 +29,7 @@ public class Receiver3 {
       String input = keyScan.nextLine();
       out.println(input);
 
+      // 클라이언트가 quit을 입력하면 종료 !!
       if (str.equals("quit"))
         break;
     }
