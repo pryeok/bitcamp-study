@@ -27,6 +27,8 @@ public class App {
       } else if (command.getName().equals("minus")) {
         commandHandler.doMinus(command);
 
+      } else if (command.getName().equals("divide")) {
+        commandHandler.doDivide(command);
       } else {
         System.out.println("지원하지 않는 연산자입니다.");
       }
