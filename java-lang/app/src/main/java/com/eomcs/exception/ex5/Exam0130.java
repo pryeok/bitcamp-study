@@ -5,10 +5,7 @@ import java.sql.Date;
 import java.util.Scanner;
 
 public class Exam0130 {
-  // 실무에서는 개발자에게 예외의 의미를 직관적으로 알 수 있도록
-  // RuntimeException 같은 평범한, 의미가 모호한 이름의 클래스를 사용하지 않고
-  // 대신에 기존 예외를 상속 받아 의미있는 이름으로 서브 클래스를 정의한 다음에
-  // 그 예외 클래스를 사용한다.
+
   static Board read() throws BoardException {
     try (Scanner keyScan = new Scanner(System.in)) {
       Board board = new Board();
