@@ -33,7 +33,7 @@ public class Server0210 {
         //        out.flush();
         // character stream 클래스의 경우
         // 출력 데이터를 내부 버퍼에 보관하고 있다가
-        // flush()가 호출되면 비로서 출력을 수행한다.
+        // flush()가 호출되면 비로서 출력을 수행한다.!!!!!!!!!!!!!!!!!!!!!
         // 따라서 위 출력 문자열은 클라이언트에 보내지 않는다.
         // 주의!
         // => 단 close()를 호출하면 close() 내부에서 flush()를 실행한다.
@@ -50,3 +50,4 @@ public class Server0210 {
 
 }
 
+//결론 : byte stream이든 character stream이든 웬만하면 그냥 다 flush()를 호출하여 사용하자 !!!
