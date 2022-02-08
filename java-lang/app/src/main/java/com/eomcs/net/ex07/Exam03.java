@@ -7,7 +7,7 @@ public class Exam03 {
 
   public static void main(String[] args) throws Exception {
     // 자원의 내부 위치를 표현하는 방법
-    // - http://서버주소:포트/자원의경로/../xxx#문서의 내부 위치
+    // - http://서버주소:포트/자원의경로/../xxx#문서의 내부 위치 !!!
     URL url = new URL("https://tools.ietf.org/html/rfc2616#section-5.1");
 
     // URL 분석
