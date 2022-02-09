@@ -71,13 +71,6 @@ public class ChatClient extends JFrame {
 
   public static void main(String[] args) throws Exception {
     UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-    //    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-    //    UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-    //    UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-    //    UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
-    //    UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel"); // 리눅스 OS 만 가능
-    //    UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel"); // Windows OS 만 가능
-    //    UIManager.setLookAndFeel("com.apple.laf.AquaLookAndFeel"); // macOS 만 가능
     new ChatClient();
   }
 
