@@ -12,13 +12,16 @@ public class Exam0140 {
   }
 
   class X implements A, B {
+    @Override
     public void m1() {};
+    @Override
     public void m2() {}
   }
-  
+
   public static void main(final String[] args) {
     // 여러 개의 인터페이스를 구현할 수 있을까?
     // => 안된다. 익명 클래스에는 그런 문법은 없다.
+    // 꼭 한 개의 인터페이스만 구현 가능
     //
     Object obj = new A, B() { // 컴파일 오류!
       @Override
