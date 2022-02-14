@@ -18,7 +18,6 @@ public class Exam0320 {
     test((a, b) -> a + b);
 
   }
-
 }
 
 
