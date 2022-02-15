@@ -16,7 +16,7 @@ public class Exam0210 {
     ArrayList<Member> list3;
     list3 = new ArrayList<>(); // OK!
 
-    // 제네릭 문법으로 레퍼런스 변수를 선언할 때는 타입명을 생략할 수 없다.
+    // 제네릭 문법으로 레퍼런스 변수를 선언할 때는 타입명을 생략할 수 없다. !!!!
     //    ArrayList<> list4 = new ArrayList<Member>(); // 컴파일 오류!
 
   }

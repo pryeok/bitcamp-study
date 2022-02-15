@@ -39,11 +39,14 @@ public class Exam0223 {
     //    m1(new ArrayList<Object>()); // 컴파일 오류!
     //    m1(new ArrayList<A>()); // 컴파일 오류!
     m1(new ArrayList<B1>()); // OK!
+    m1(new ArrayList<>()); // OK! B1 생략 가능!
     //    m1(new ArrayList<B2>()); // 컴파일 오류!
     //    m1(new ArrayList<C>()); // 컴파일 오류!
+
+
   }
 
-  static void m1(ArrayList<B1> list) {
+  static void m1(ArrayList<B1> list) { // 객체를 사용할 때에는 하위 객체도 사용가능!!!
     // 컴파일러는 파라미터로 넘어온 ArrayList가  어떤 타입이든 간에 
     // 문법적으로 B1 타입의 값만 다룬다.
 
@@ -51,7 +54,7 @@ public class Exam0223 {
     //list.add(new A()); // 컴파일 오류!
     list.add(new B1());
     //list.add(new B2()); // 컴파일 오류!
-    list.add(new C());
+    list.add(new C());  // !!!!!!!!
 
     // list에 B1 타입이 아닌 다른 타입을 저장할 때는 아무런 문제가 발생하지 않았지만,
     // ArrayList에서 값을 꺼낼 때 메서드에서 지정한 <B1> 타입이 아니면 ClassCastException 발생!

@@ -27,7 +27,7 @@ public class Exam0230 {
   public static void main(String[] args) {
 
     // 2) 제네릭이 적용된 Box 클래스 이용
-    // - 먼저 Box가 어떤 타입의 값을 다룰 것인지 지정해야 한다.
+    // - 먼저 Box가 어떤 타입의 값을 다룰 것인지 지정해야 한다.!!!!!!!!!!!!!!
     Box<Member> b1 = new Box<Member>();
 
     // - 인스턴스를 생성할 때 지정한 타입의 객체를 넘긴다.
