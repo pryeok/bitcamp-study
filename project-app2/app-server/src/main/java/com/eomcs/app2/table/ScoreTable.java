@@ -35,7 +35,7 @@ public class ScoreTable {
   public static int insert(Score score) {
     scores.add(score);
     save();
-    return 0;
+    return 1;
   }
 
   public static Score[] selectList() {
