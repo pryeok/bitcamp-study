@@ -47,6 +47,7 @@ public class ScoreTableProxy {
     }
   }
 
+
   public Score[] selectList() {
     try {
       out.writeUTF("selectList");
