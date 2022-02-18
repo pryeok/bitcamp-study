@@ -65,6 +65,7 @@ public class ScoreTableProxy {
     }
   }
 
+
   public Score selectOne(int no) {
     try {
       out.writeUTF("selectOne");
