@@ -117,5 +117,4 @@ public class ScoreTableProxy {
       throw new ScoreTableException(e);
     }
   }
-
 }
