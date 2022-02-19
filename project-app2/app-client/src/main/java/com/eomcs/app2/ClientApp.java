@@ -60,6 +60,7 @@ public class ClientApp {
     System.out.println("5. 삭제");
   }
 
+
   private boolean checkQuit(String input ) {
     return input.equals("quit") || input.equals("exit");
   }
