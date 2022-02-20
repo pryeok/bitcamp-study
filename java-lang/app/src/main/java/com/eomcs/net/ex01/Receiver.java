@@ -54,7 +54,6 @@ public class Receiver {
     // 7) 네트워크 연결도 닫는다.
     socket.close(); // 클라이언트와 연결을 끊는다
     serverSocket.close(); // 클라이언트의 연결 요청을 받지 않는다
-
   }
 }
 
