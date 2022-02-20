@@ -56,7 +56,6 @@ public class Receiver {
     serverSocket.close(); // 클라이언트의 연결 요청을 받지 않는다
 
   }
-
 }
 
 
