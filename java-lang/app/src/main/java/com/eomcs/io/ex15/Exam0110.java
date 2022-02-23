@@ -24,6 +24,7 @@ public class Exam0110 {
     // 바이트 배열에 저장된 바이너리 데이터를 텍스트로 변환하기
     String encodedStr = encoder.encodeToString(Arrays.copyOf(buf, len));
 
+
     // 텍스트로 변환된 데이터를 파일로 출력하기
     out.write(encodedStr);
 
