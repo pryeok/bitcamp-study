@@ -12,6 +12,5 @@ public class Prompt {
 
   public static int promptInt(String titleFormat, Object... args) {
     return Integer.parseInt(promptString(titleFormat, args));
-
   }
 }
