@@ -1,2 +1,12 @@
-/main/
+/.tern-project
+/build.gradle
+/doc/
+/sample/
+/src/
+/temp/
+/temp.java/
+/temp2/
 /test/
+/webroot/
+/welcome.txt
+/main/
