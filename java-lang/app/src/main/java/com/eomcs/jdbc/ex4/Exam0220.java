@@ -35,7 +35,7 @@ public class Exam0220 {
     }
 
     try (Connection con = DriverManager.getConnection( //
-        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mariadb://localhost:3306/studydb?user=study&password=1111");
 
         // => 게시글을 입력할 때 자동 생성된 PK 값을 받겠다고 설정한다.
         PreparedStatement boardStmt = con.prepareStatement(
@@ -44,7 +44,7 @@ public class Exam0220 {
 
         PreparedStatement fileStmt = con.prepareStatement(
             "insert into x_board_file(file_path,board_id) values(?,?)")) {
-
+      .
       // 여러 개의 데이터 변경 작업을 한 단위로 묶어 수행해야 한다면,
       // commit 할 때까지 실제 테이블에 적용하지 않도록
       // auto commit을 취소하고 수동 커밋 상태로 만든다.

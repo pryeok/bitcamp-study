@@ -27,6 +27,6 @@ public class Exam0361 {
       System.out.printf("x_board 테이블 : %d 개 삭제 성공!\n", count2);
     }
   }
-}g
+}
 
 
