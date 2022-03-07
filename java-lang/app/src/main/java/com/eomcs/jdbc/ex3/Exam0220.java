@@ -62,6 +62,8 @@ public class Exam0220 {
       } else {
         System.out.println("변경하였습니다.");
       }
+
+
       // Statement vs PreparedStatement
       // 1) SQL 문장의 간결함
       // [Statement]
