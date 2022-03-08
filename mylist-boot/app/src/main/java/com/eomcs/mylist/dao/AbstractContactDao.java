@@ -1,7 +1,7 @@
 package com.eomcs.mylist.dao;
 
+import java.util.ArrayList;
 import com.eomcs.mylist.domain.Contact;
-import com.eomcs.util.ArrayList;
 
 public abstract class AbstractContactDao implements ContactDao {
 

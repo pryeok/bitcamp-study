@@ -29,14 +29,3 @@ public class JsonBoardDao extends AbstractBoardDao {
     mapper.writeValue(new File(filename), boardList.toArray());
   }
 }
-
-
-
-
-
-
-
-
-
-
-
