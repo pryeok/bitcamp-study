@@ -20,6 +20,7 @@ import java.sql.SQLException;
 // 4) 이클립스 프로젝트를 리프래시 한다.
 //    - 프로젝트에 mariadb jdbc driver 라이브러리가 추가되었는지 확인한다.
 //
+
 public class Exam0110 {
 
   public static void main(String[] args) {
