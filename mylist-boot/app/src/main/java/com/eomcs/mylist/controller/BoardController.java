@@ -1,6 +1,5 @@
 package com.eomcs.mylist.controller;
 
-import java.sql.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,44 +17,35 @@ public class BoardController {
   BoardDao boardDao;
 
   @RequestMapping("/board/list")
-  public Object list() {
+  public Object list() throws Exception {
     return boardDao.findAll(); 
   }
 
   @RequestMapping("/board/add")
   public Object add(Board board) throws Exception {
-    board.setCreatedDate(new Date(System.currentTimeMillis()));
-    boardDao.insert(board);
-    return boardDao.countAll();
+    return boardDao.insert(board);
   }
 
 
   @RequestMapping("/board/get")
-  public Object get(int index) throws Exception {
-    Board board = boardDao.findByNo(index);
+  public Object get(int no) throws Exception {
+    Board board = boardDao.findByNo(no);
     if (board == null) {
       return "";
     }
-    boardDao.increaseViewCount(index);
+    boardDao.increaseViewCount(no);
     return board;
   }
 
   @RequestMapping("/board/update")
-  public Object update(int index, Board board) throws Exception {
-    Board old = boardDao.findByNo(index);
-    if (old == null) {
-      return 0;
-    }
+  public Object update(Board board) throws Exception {
 
-    board.setViewCount(old.getViewCount());
-    board.setCreatedDate(old.getCreatedDate());
-
-    return boardDao.update(index, board);
+    return boardDao.update(board);
   }
 
   @RequestMapping("/board/delete")
-  public Object delete(int index) throws Exception {
-    return boardDao.delete(index);
+  public Object delete(int no) throws Exception {
+    return boardDao.delete(no);
   }
 }
 

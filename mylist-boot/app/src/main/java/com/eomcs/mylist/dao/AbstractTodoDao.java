@@ -5,7 +5,7 @@ import com.eomcs.mylist.domain.Todo;
 
 public abstract class AbstractTodoDao implements TodoDao {
 
-  protected ArrayList todoList = new ArrayList(); 
+  protected ArrayList<Todo> todoList = new ArrayList<Todo>(); 
 
   protected abstract void save() throws Exception;
 
@@ -30,7 +30,7 @@ public abstract class AbstractTodoDao implements TodoDao {
     if (no < 0 || no >= todoList.size()) {
       return null;
     }
-    return (Todo) todoList.get(no);
+    return todoList.get(no);
   }
 
   @Override
@@ -48,7 +48,7 @@ public abstract class AbstractTodoDao implements TodoDao {
     if (no < 0 || no >= todoList.size()) {
       return 0;
     }
-    ((Todo) todoList.get(no)).setDone(done);
+    todoList.get(no).setDone(done);
     save();
     return 1;
   }
