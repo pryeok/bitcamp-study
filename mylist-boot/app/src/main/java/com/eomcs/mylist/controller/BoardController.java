@@ -18,7 +18,7 @@ public class BoardController {
 
   @RequestMapping("/board/list")
   public Object list() {
-    return boardDao.findAll(); 
+    return boardDao.findAll();
   }
 
   @RequestMapping("/board/add")
@@ -39,7 +39,6 @@ public class BoardController {
 
   @RequestMapping("/board/update")
   public Object update(Board board) {
-
     return boardDao.update(board);
   }
 

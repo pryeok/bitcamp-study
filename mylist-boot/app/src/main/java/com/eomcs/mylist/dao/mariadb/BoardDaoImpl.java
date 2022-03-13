@@ -29,7 +29,7 @@ public class BoardDaoImpl implements BoardDao {
   @Override
   public int countAll() {
     try (Connection con = dataSource.getConnection();
-        // DataSource에서 얻은 커넥션 객체는 close() 할 때 연결을 끊는 것이 아니라 DataSource에 반납된다!!!
+        // DataSource에서 얻은 커넥션 객체는 close() 할 때 연결을 끊는 것이 아니라 DataSource에 반납된다.
         PreparedStatement stmt = con.prepareStatement( 
             "select count(*) from ml_board");
         ResultSet rs = stmt.executeQuery()) {
