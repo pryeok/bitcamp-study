@@ -1,6 +1,6 @@
 package com.eomcs.mylist.domain;
 
-public class Todo{
+public class Todo {
   int no;
   String title;
   boolean done;
@@ -9,7 +9,6 @@ public class Todo{
   public String toString() {
     return "Todo [no=" + no + ", title=" + title + ", done=" + done + "]";
   }
-
   public int getNo() {
     return no;
   }

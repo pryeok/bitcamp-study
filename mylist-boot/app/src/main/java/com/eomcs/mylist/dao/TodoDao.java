@@ -12,7 +12,7 @@ public interface TodoDao {
 
   List<Todo> findAll();
 
-  void insert(Todo todo);
+  int insert(Todo todo);
 
   Todo findByNo(int no);
 

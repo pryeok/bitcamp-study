@@ -33,7 +33,7 @@
   
   <select id="findByNo" resultMap="todoMap" parameterType="int">
     select 
-      book_no,
+      todo_no,
       title,
       done
     from 
