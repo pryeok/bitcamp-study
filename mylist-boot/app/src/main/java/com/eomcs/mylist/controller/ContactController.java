@@ -1,10 +1,12 @@
 package com.eomcs.mylist.controller;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.eomcs.mylist.dao.ContactDao;
 import com.eomcs.mylist.domain.Contact;
+import com.eomcs.mylist.domain.ContactTel;
 
 @RestController 
 public class ContactController {
@@ -14,20 +16,31 @@ public class ContactController {
 
   @RequestMapping("/contact/list")
   public Object list() {
-    return contactDao.findAll(); 
+    List<Contact> contacts = contactDao.findAll();
+    for (Contact contact : contacts) {
+      contact.setTels(contactDao.findTelByContactNo(contact.getNo()));
+    }
+    return contacts;
   }
 
   @RequestMapping("/contact/add")
-  public Object add(Contact contact) throws Exception {
+  public Object add(Contact contact, String[] tel) throws Exception {
     contactDao.insert(contact);
-    return contactDao.countAll();
+    for (int i = 0; i < tel.length; i++) {
+      String[] value = tel[i].split(",");
+      contactDao.insertTel(new ContactTel(contact.getNo(), Integer.parseInt(value[0]), value[1]));
+    }
+    return 1;
   }
-
 
   @RequestMapping("/contact/get")
   public Object get(int no) {
     Contact contact = contactDao.findByNo(no);
-    return contact != null ? contact : "";
+    if (contact == null) {
+      return "";
+    }
+    contact.setTels(contactDao.findTelByContactNo(no));
+    return contact;
   }
 
   @RequestMapping("/contact/update")
