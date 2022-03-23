@@ -95,7 +95,6 @@ public class ContactController {
     return contactService.delete(no);
   }
 
-
 }
 
 
