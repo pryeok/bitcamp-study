@@ -38,6 +38,7 @@ public class NonTransactionContactService implements ContactService {
       contact.setTels(contactDao.findTelByContactNo(no));
     }
     return contact;
+
   }
 
   @Override
