@@ -1,4 +1,4 @@
-package com.eomcs.web.javascript;
+package com.eomcs.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
