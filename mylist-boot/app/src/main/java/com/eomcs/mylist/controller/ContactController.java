@@ -12,7 +12,7 @@ import com.eomcs.mylist.service.ContactService;
 public class ContactController {
 
   @Autowired
-  ContactService contactService; // 클래스 대신 인터페이스를 지정한다
+  ContactService contactService; // 클래스 대신 인터페이스를 지정한다.
 
   @RequestMapping("/contact/list")
   public Object list() {
@@ -29,12 +29,8 @@ public class ContactController {
       if (value[1].length() == 0) {
         continue;
       }
-<<<<<<< HEAD
-      contactDao.insertTel(new ContactTel(contact.getNo(), Integer.parseInt(value[0]), value[1]));
-=======
       ContactTel contactTel = new ContactTel(Integer.parseInt(value[0]), value[1]);
       telList.add(contactTel);
->>>>>>> ce8ddd3fa9b1ed2a57562acc62a4b6b97fdc291a
     }
     contact.setTels(telList);
 
@@ -76,20 +72,6 @@ public class ContactController {
 
   @RequestMapping("/contact/update")
   public Object update(Contact contact, String[] tel) throws Exception {
-<<<<<<< HEAD
-    int count = contactDao.update(contact);
-    if (count > 0) {
-      contactDao.deleteTelByContactNo(contact.getNo());
-      for (int i = 0; i < tel.length; i++) {
-        String[] value = tel[i].split("_");
-        if (value[1].length() == 0) {
-          continue;
-        }
-        contactDao.insertTel(new ContactTel(contact.getNo(), Integer.parseInt(value[0]), value[1]));
-      }
-    }
-    return count;
-=======
     // 요청 파라미터 분석 및 가공
     ArrayList<ContactTel> telList = new ArrayList<>();
     for (int i = 0; i < tel.length; i++) {
@@ -106,17 +88,11 @@ public class ContactController {
 
     // 서비스 객체 실행
     return contactService.update(contact);
->>>>>>> ce8ddd3fa9b1ed2a57562acc62a4b6b97fdc291a
   }
 
   @RequestMapping("/contact/delete")
   public Object delete(int no) throws Exception {
-<<<<<<< HEAD
-    contactDao.deleteTelByContactNo(no);
-    return contactDao.delete(no);
-=======
     return contactService.delete(no);
->>>>>>> ce8ddd3fa9b1ed2a57562acc62a4b6b97fdc291a
   }
 
 }
