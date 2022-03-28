@@ -28,6 +28,11 @@
 	</classpathentry>
 	<classpathentry kind="output" path="bin/default"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11/"/>
+	<classpathentry sourcepath="C:/Users/user/.gradle/caches/modules-2/files-2.1/net.coobird/thumbnailator/0.4.17/da8c663577c6798d852376edc59c9f7bf11da23a/thumbnailator-0.4.17-sources.jar" kind="lib" path="C:/Users/user/.gradle/caches/modules-2/files-2.1/net.coobird/thumbnailator/0.4.17/4dbb7adfc9ac2346b8c40817130879ee87f20533/thumbnailator-0.4.17.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry sourcepath="C:/Users/user/.gradle/caches/modules-2/files-2.1/org.mariadb.jdbc/mariadb-java-client/3.0.3/b8f02d6ce0aa5a4c29fad58970ead9a08805f7e0/mariadb-java-client-3.0.3-sources.jar" kind="lib" path="C:/Users/user/.gradle/caches/modules-2/files-2.1/org.mariadb.jdbc/mariadb-java-client/3.0.3/d88d6d447b8d6194bd3895c96abedd21b4d83355/mariadb-java-client-3.0.3.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
@@ -46,6 +51,11 @@
 	<classpathentry sourcepath="C:/Users/user/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.6.1/eb5b232472d2c85d424d5fd68e84c0735787eff2/spring-boot-starter-web-2.6.1-sources.jar" kind="lib" path="C:/Users/user/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.6.1/145ac0cfb81982608ef0d19e32699c0eeeb3c2ab/spring-boot-starter-web-2.6.1.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/user/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.22/764fbcf20fe348c23338b3f8a7373c9e7d206956/lombok-1.18.22-sources.jar" kind="lib" path="C:/Users/user/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.22/9c08ea24c6eb714e2d6170e8122c069a0ba9aacf/lombok-1.18.22.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="C:/Users/user/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/2.6.1/d91213756d183d55a24c6dc41352c9637f108357/spring-boot-starter-json-2.6.1-sources.jar" kind="lib" path="C:/Users/user/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/2.6.1/b76ad5d869508cc78aaf00bb7ab92e8a472b26ed/spring-boot-starter-json-2.6.1.jar">
