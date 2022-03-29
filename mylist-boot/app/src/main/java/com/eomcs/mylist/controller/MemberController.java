@@ -15,4 +15,5 @@ public class MemberController {
   public Object signUp(MemberController member) {
     return memberService.add(member);
   }
+
 }
