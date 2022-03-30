@@ -1,8 +1,11 @@
 package com.eomcs.mylist.controller;
 
+<<<<<<< HEAD
 import static com.eomcs.mylist.controller.ResultMap.FAIL;
 import static com.eomcs.mylist.controller.ResultMap.SUCCESS;
 import javax.servlet.http.HttpSession;
+=======
+>>>>>>> 7d3b44b0e571869df2bc955039281c445cd58f14
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +20,7 @@ public class MemberController {
 
   @RequestMapping("/member/signup")
   public Object signUp(Member member) {
+<<<<<<< HEAD
     if (memberService.add(member) == 1) {
       return "success";
     } else {
@@ -68,3 +72,8 @@ public class MemberController {
 
 
 
+=======
+    return memberService.add(member);
+  }
+}
+>>>>>>> 7d3b44b0e571869df2bc955039281c445cd58f14
