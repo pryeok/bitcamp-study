@@ -14,5 +14,4 @@ public class Todo {
     this.no = no;
     this.done = done;
   }
-
 }
