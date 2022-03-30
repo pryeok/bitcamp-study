@@ -16,4 +16,5 @@ public class DefaultMemberService implements MemberService {
   public int add(Member member) {
     return memberDao.insert(member);
   }
+
 }

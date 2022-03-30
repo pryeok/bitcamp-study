@@ -11,5 +11,3 @@ public class Member {
   String password;
   Date registDate;
 }
-
-
