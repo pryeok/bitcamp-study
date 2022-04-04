@@ -31,9 +31,9 @@
   
   document.querySelector("#x-add-btn").onclick = function() {
     if (xTitle.value == "" || 
-    		xAuthor.value == "" ||
-    		xPress.value == "" ||
-    		xFeed.value == "") {
+        xAuthor.value == "" ||
+        xPress.value == "" ||
+        xFeed.value == "") {
       window.alert("필수 입력 항목이 비어 있습니다.");
       return;
     }
@@ -41,7 +41,7 @@
     var fd = new FormData(document.forms.namedItem("form1"));
     
     if (xReadDate.value == "") { // 독서일을 지정하지 않았으면 서버에 보내지 않는다.
-    	fd.delete("readDate");
+      fd.delete("readDate");
     }
     
     fetch("/book/add", { 

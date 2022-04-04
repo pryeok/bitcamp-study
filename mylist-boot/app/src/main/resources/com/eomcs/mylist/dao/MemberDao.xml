@@ -8,7 +8,6 @@
  -->
 <mapper namespace="com.eomcs.mylist.dao.MemberDao">
 
-<<<<<<< HEAD
   <resultMap type="member" id="memberMap">
     <id column="no" property="no"/>
     <result column="name" property="name"/>
@@ -16,14 +15,11 @@
     <result column="regist_date" property="registDate"/>
   </resultMap>
   
-=======
->>>>>>> 7d3b44b0e571869df2bc955039281c445cd58f14
   <insert id="insert" parameterType="member">
     insert into ml_member(name,email,password) 
     values(#{name},#{email},password(#{password}))
   </insert>
 
-<<<<<<< HEAD
   <select id="findByEmailAndPassword" resultMap="memberMap">
     select 
       no,
@@ -34,8 +30,17 @@
     where
       email=#{email} and password=password(#{password})
   </select>
-=======
->>>>>>> 7d3b44b0e571869df2bc955039281c445cd58f14
+  
+  <select id="findByEmail" resultMap="memberMap" parameterType="string">
+    select 
+      no,
+      name,
+      email
+    from 
+      ml_member
+    where
+      email=#{email}
+  </select>
 </mapper>
 
 
