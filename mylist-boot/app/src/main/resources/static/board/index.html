@@ -1,4 +1,3 @@
-
 <h1>게시글</h1>
 <a href="?content=/board/form.html">새 게시글</a>
 <table id="x-board-table" border="1">
@@ -23,12 +22,12 @@
       return response.json();
     })
     .then(function(result) {
-    	if (result.status == "fail") {
-	    	window.alert("서버 요청 오류!");
-	      console.log(result.data);
-	      return;
-    	}
-    	
+      if (result.status == "fail") {
+        window.alert("서버 요청 오류!");
+        console.log(result.data);
+        return;
+      }
+      
       for (var board of result.data) {
         var tr = document.createElement("tr");
         tr.innerHTML = `<td>${board.no}</td>
