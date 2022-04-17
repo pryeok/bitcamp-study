@@ -3,19 +3,21 @@ package com.eomcs.mylist.controller;
 import static com.eomcs.mylist.controller.ResultMap.FAIL;
 import static com.eomcs.mylist.controller.ResultMap.SUCCESS;
 import javax.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.eomcs.mylist.domain.Board;
 import com.eomcs.mylist.domain.Member;
 import com.eomcs.mylist.service.BoardService;
-import com.sun.org.slf4j.internal.LoggerFactory;
 
 @RestController 
 public class BoardController {
 
   // log를 출력하는 도구 준비
   private static final Logger log = LoggerFactory.getLogger(BoardController.class);
+
   @Autowired
   BoardService boardService;
 
@@ -34,6 +36,7 @@ public class BoardController {
   @RequestMapping("/board/add")
   public Object add(Board board, HttpSession session) {
     log.info("게시글 등록!"); // 운영자가 확인하기를 원하는 정보
+    log.debug(board.toString()); // 개발자가 확인하기를 원하는 정보
 
     Member member = (Member) session.getAttribute("loginUser");
     board.setWriter(member);
@@ -79,7 +82,6 @@ public class BoardController {
       return new ResultMap().setStatus(FAIL).setData("게시글 번호가 유효하지 않거나 게시글 작성자가 아닙니다.");
     }
   }
-
 }
 
 
