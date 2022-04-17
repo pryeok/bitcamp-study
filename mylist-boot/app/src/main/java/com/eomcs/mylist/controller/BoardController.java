@@ -3,14 +3,13 @@ package com.eomcs.mylist.controller;
 import static com.eomcs.mylist.controller.ResultMap.FAIL;
 import static com.eomcs.mylist.controller.ResultMap.SUCCESS;
 import javax.servlet.http.HttpSession;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.eomcs.mylist.domain.Board;
 import com.eomcs.mylist.domain.Member;
 import com.eomcs.mylist.service.BoardService;
+import com.sun.org.slf4j.internal.LoggerFactory;
 
 @RestController 
 public class BoardController {
@@ -80,6 +79,7 @@ public class BoardController {
       return new ResultMap().setStatus(FAIL).setData("게시글 번호가 유효하지 않거나 게시글 작성자가 아닙니다.");
     }
   }
+
 }
 
 
