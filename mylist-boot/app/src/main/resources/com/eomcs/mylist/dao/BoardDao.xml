@@ -86,7 +86,6 @@
     where board_no=#{no}
   </update>
 
-
 </mapper>
 
 
